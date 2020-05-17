@@ -1,0 +1,21 @@
+<launch>
+
+	<node pkg="AR_week4_test" name="points_generator" type="points_generator.py" output="screen">
+	</node>
+
+	<node pkg="AR_week4_test" name="cubic_traj_planner" type="cubic_traj_planner.py" output="screen">
+	</node>
+
+	<node pkg="AR_week4_test" name="compute_cubic_coeffs" type="compute_cubic_coeffs.py" output="screen">
+	</node>
+
+	<node pkg="AR_week4_test" name="plot_cubic_traj" type="plot_cubic_traj.py" output="screen">
+	</node>
+
+	<node pkg="rqt_plot" name="rqt_plot" type="rqt_plot" args="/velocity_trajectory /position_trajectory /acceleration_trajectory">
+	</node>
+
+	<node pkg="rqt_graph" name="rqt_graph" type="rqt_graph">
+	</node>
+
+</launch>
